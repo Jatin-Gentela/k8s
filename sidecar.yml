@@ -16,6 +16,17 @@ spec:
       mountPath: /usr/share/nginx/html
     ports:
     - containerport: 80
+  - name: 2nd
+    image: debian
+    volumeMounts:
+    - name: html
+      mountPath: /html
+    command: ["/bin/sh", "-c"]
+    args:
+      - while true; do
+          date >> /html/index.html;
+          sleep 1;
+        done
 
 ---
 apiVersion: v1
@@ -30,21 +41,7 @@ spec:
     targetPort: 80
     nodePort: 40000
   selector:
-    app: mc1
-
-
-
-  - name: 2nd
-    image: debian
-    volumeMounts:
-    - name: html
-      mountPath: /html
-    command: ["/bin/sh", "-c"]
-    args:
-      - while true; do
-          date >> /html/index.html;
-          sleep 1;
-        done
+    app: mc1 
         
         
 # curl IP of pod
