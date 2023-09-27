@@ -10,7 +10,7 @@ spec:
       maxSurge: 25%
       maxUnavailable: 25%
     type: RollingUpdate
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: myapp
@@ -22,5 +22,5 @@ spec:
       containers:
       - name: myapp-cont
         image: lerndevops/samplepyapp:v2
-        ports:
+        ports: 
         - containerPort: 3000
