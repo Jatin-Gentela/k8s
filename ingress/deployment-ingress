@@ -26,7 +26,7 @@ metadata:
   name: app1-svc
 spec:
   ports:
-  - port: 8080
+  - port: 80
   selector:
     app: app1
 
@@ -60,7 +60,7 @@ metadata:
   name: app2-svc
 spec:
   ports:
-  - port: 8080
+  - port: 80
   selector:
     app: app2
 
@@ -94,6 +94,6 @@ metadata:
   name: app3-svc
 spec:
   ports:
-  - port: 8080
+  - port: 80
   selector:
     app: app3
